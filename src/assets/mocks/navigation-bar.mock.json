@@ -1,0 +1,14 @@
+[
+  {
+    "navBarId": 1,
+    "navBarDesc": "Home",
+    "navBarLink": "/home",
+    "navBarClass": ""
+  },
+  {
+    "navBarId": 2,
+    "navBarDesc": "Eventi",
+    "navBarLink": "/eventi",
+    "navBarClass": "navigationBarGree"
+  }
+]

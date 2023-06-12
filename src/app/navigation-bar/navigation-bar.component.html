@@ -1,2 +1,13 @@
-<a routerLink="/home" class="navigationBarElement">Home</a>
-<a routerLink="/eventi" class="navigationBarElement">Eventi</a>
+<div
+  *ngFor="let navigationBarEle of navigationBar; let i = index"
+  class="navigationBarElement"
+  [ngClass]="
+    navigationBarEle.navBarClass === ''
+      ? 'navigationBarElement'
+      : navigationBarEle.navBarClass
+  "
+  [ngStyle]="{ cursor: 'pointer' }"
+  (click)="navigate(navigationBarEle.navBarLink)"
+>
+  {{ navigationBarEle.navBarDesc }}
+</div>
