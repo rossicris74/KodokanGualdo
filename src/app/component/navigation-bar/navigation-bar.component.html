@@ -11,3 +11,8 @@
 >
   {{ navigationBarEle.navBarDesc }}
 </div>
+<kg-button
+  *ngFor="let navigationBarEle of navigationBar; let i = index"
+  [title]="navigationBarEle.navBarDesc"
+  (onClick)="navigate(navigationBarEle.navBarLink)"
+></kg-button>

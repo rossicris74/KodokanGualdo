@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavigationBarService } from '../api/src/lib/navigation-bar/public-api';
+import { NavigationBarService } from '../../api/src/lib/navigation-bar/public-api';
 import { NavigationBarHttpService } from './navigation-bar.service';
 import * as NavigationBarType from './navigation-bar.type';
 

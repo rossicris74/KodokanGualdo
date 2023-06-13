@@ -1,0 +1,14 @@
+.kg-button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 0 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8%;
+  height: 30px;
+}
