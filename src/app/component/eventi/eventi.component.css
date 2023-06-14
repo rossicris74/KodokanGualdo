@@ -13,3 +13,7 @@
   text-align: center;
   border-spacing: 0px;
 }
+
+.kg-eventi-arrow {
+  cursor: pointer;
+}

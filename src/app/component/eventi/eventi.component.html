@@ -21,8 +21,11 @@
   <div style="margin-left: 150px; margin-top: 150px">
     <table class="eventi-td-giorno">
       <tr>
-        <td style="border: 2px solid" colspan="7">Giugno</td>
+        <td><div (click)="doPrec()" class="kg-eventi-arrow">Ind</div></td>
+        <td style="border: 2px solid" colspan="5">{{ meseCorrenteNome }}</td>
+        <td><div (click)="doSucc()" class="kg-eventi-arrow">Av</div></td>
       </tr>
+
       <tr>
         <td>lu</td>
         <td>ma</td>
@@ -31,6 +34,11 @@
         <td>ve</td>
         <td>sa</td>
         <td>do</td>
+      </tr>
+      <tr *ngFor="let calendSett of calendMese">
+        <td *ngFor="let caledGG of calendSett">
+          {{ caledGG.giorno !== 0 ? caledGG.giorno : "" }}
+        </td>
       </tr>
     </table>
   </div>
