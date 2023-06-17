@@ -1,19 +1,25 @@
 .eventi-td-giorno {
-  border-spacing: 1px;
+  border-spacing: 0 px;
+  /* background-color: blue; */
 }
 .eventi-td-giorno td {
   width: 50px;
   height: 50px;
-  border: 5px solid;
   border-color: black;
   font-family: Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
-  font-size: 12;
+  font-size: 16;
   text-align: center;
   border-spacing: 0px;
+  color: white;
+  font-weight: bold;
 }
 
 .kg-eventi-arrow {
   cursor: pointer;
+  font-size: 36px;
+  font-weight: bold;
+  font-style: normal;
+  color: orangered;
 }

@@ -21,9 +21,15 @@
   <div style="margin-left: 150px; margin-top: 150px">
     <table class="eventi-td-giorno">
       <tr>
-        <td><div (click)="doPrec()" class="kg-eventi-arrow">Ind</div></td>
-        <td style="border: 2px solid" colspan="5">{{ meseCorrenteNome }}</td>
-        <td><div (click)="doSucc()" class="kg-eventi-arrow">Av</div></td>
+        <td>
+          <div (click)="doPrec()">
+            <p class="kg-eventi-arrow"><</p>
+          </div>
+        </td>
+        <td colspan="5">{{ meseCorrenteNome }}</td>
+        <td>
+          <div (click)="doSucc()"><p class="kg-eventi-arrow">></p></div>
+        </td>
       </tr>
 
       <tr>
