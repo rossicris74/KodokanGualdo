@@ -10,5 +10,11 @@
     "navBarDesc": "Eventi",
     "navBarLink": "/eventi",
     "navBarClass": "navigationBarGree"
+  },
+  {
+    "navBarId": 3,
+    "navBarDesc": "Staff",
+    "navBarLink": "/eventi",
+    "navBarClass": "navigationBarGree"
   }
 ]

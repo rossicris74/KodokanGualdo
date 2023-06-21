@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import * as CalendarType from './calendar.type';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class KgCalendarSandbox {
   data: Date = new Date();
-  calendMese: CalendarType.CalendMese = [];
+
+  calendMese$ = new BehaviorSubject<CalendarType.CalendMese>([]);
 
   constructor() {
-    this.calendMese = this.calendarioMeseShow();
+    this.calendMese$.next(this.calendarioMeseShow());
   }
 
   fineMese(mese: number): number {
@@ -103,6 +107,7 @@ export class KgCalendarSandbox {
         '01' +
         'T01:01:00.000Z'
     );
+    this.calendMese$.next(this.calendarioMeseShow());
   }
 
   calendarioMeseShow(): CalendarType.CalendMese {

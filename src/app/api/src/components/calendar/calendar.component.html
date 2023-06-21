@@ -1,33 +1,39 @@
-<table class="kg-calendar-td-giorno">
-  <tr>
-    <td>
-      <div (click)="doPrec()">
-        <p class="kg-calendar-arrow"><</p>
-      </div>
-    </td>
-    <td colspan="5">
-      <p class="kg-calendar-anno-mese">
-        {{ calendarSandBox.meseCorrenteNome }}
-        {{ calendarSandBox.annoCorrente }}
-      </p>
-    </td>
-    <td>
-      <div (click)="doSucc()"><p class="kg-calendar-arrow">></p></div>
-    </td>
-  </tr>
+<ng-container
+  *ngIf="{
+    calendMese: calendarSandBox.calendMese$ | async
+  } as pipeData"
+>
+  <table class="kg-calendar-td-giorno">
+    <tr>
+      <td>
+        <div (click)="doPrec()">
+          <p class="kg-calendar-arrow"><</p>
+        </div>
+      </td>
+      <td colspan="5">
+        <p class="kg-calendar-anno-mese">
+          {{ calendarSandBox.meseCorrenteNome }}
+          {{ calendarSandBox.annoCorrente }}
+        </p>
+      </td>
+      <td>
+        <div (click)="doSucc()"><p class="kg-calendar-arrow">></p></div>
+      </td>
+    </tr>
 
-  <tr>
-    <td>lu</td>
-    <td>ma</td>
-    <td>me</td>
-    <td>gi</td>
-    <td>ve</td>
-    <td>sa</td>
-    <td>do</td>
-  </tr>
-  <tr *ngFor="let calendSett of calendarSandBox.calendMese">
-    <td *ngFor="let caledGG of calendSett">
-      {{ caledGG.giorno !== 0 ? caledGG.giorno : "" }}
-    </td>
-  </tr>
-</table>
+    <tr>
+      <td>lu</td>
+      <td>ma</td>
+      <td>me</td>
+      <td>gi</td>
+      <td>ve</td>
+      <td>sa</td>
+      <td>do</td>
+    </tr>
+    <tr *ngFor="let calendSett of pipeData.calendMese">
+      <td *ngFor="let caledGG of calendSett">
+        {{ caledGG.giorno !== 0 ? caledGG.giorno : "" }}
+      </td>
+    </tr>
+  </table>
+</ng-container>
