@@ -1,0 +1,9 @@
+.preview {
+  background-color: beige;
+  border: 2px solid;
+  border-color: red;
+}
+.preview td {
+  border: 2px solid;
+  border-color: green;
+}

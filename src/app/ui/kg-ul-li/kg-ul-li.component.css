@@ -1,0 +1,21 @@
+.tabella {
+  background-color: blue;
+}
+
+.tabella button {
+  margin: 15px 25px;
+  padding: 10px;
+  border: 0px;
+  font-family: sans-serif;
+  font-size: 16pt;
+  font-weight: bold;
+  color: orange;
+  background-color: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tabella button:hover {
+  background-color: orange;
+  color: white;
+}

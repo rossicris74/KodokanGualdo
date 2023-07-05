@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventiModule } from './component/eventi/eventi.module';
 import { HomeModule } from './component/home/home.module';
+import { PreviewComponentsModule } from './component/preview-components/preview.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -13,6 +14,7 @@ import { HomeModule } from './component/home/home.module';
     EventiModule,
     HomeModule,
     HttpClientModule,
+    PreviewComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

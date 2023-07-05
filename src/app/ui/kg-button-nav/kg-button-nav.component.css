@@ -1,0 +1,17 @@
+.kg-button-nav {
+  margin: 15px 25px;
+  padding: 10px;
+  border: 0px;
+  font-family: sans-serif;
+  font-size: 16pt;
+  font-weight: bold;
+  color: orange;
+  background-color: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.kg-button-nav:hover {
+  background-color: orange;
+  color: white;
+}

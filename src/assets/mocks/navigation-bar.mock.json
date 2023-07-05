@@ -13,8 +13,8 @@
   },
   {
     "navBarId": 3,
-    "navBarDesc": "Staff",
-    "navBarLink": "/eventi",
+    "navBarDesc": "Preview",
+    "navBarLink": "/preview",
     "navBarClass": "navigationBarGree"
   }
 ]
