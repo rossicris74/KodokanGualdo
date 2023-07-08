@@ -1,9 +1,80 @@
-.preview {
-  background-color: beige;
-  border: 2px solid;
-  border-color: red;
-}
-.preview td {
-  border: 2px solid;
-  border-color: green;
-}
+.tabella{background-color:#1E2337;
+  color: white;
+  margin: 50px;
+    padding: 50px;
+    font-family:"Acumin Pro Wide";
+    border-collapse: collapse;
+    }	
+  
+  
+  
+  .tr,td
+  {padding:  20px;}
+  
+  
+  .bottone1{
+      margin: 15px 20px;
+      padding: 20px;
+      border: 0px;
+      font-family:"Acumin Pro Wide";
+      font-size: 18pt;
+      background-color: #FC7C1C;
+      color: white;
+      border-radius: 15px 15px 15px 15px;
+      }
+  
+  
+  .bottone2{
+    margin: 15px 20px;
+       padding-top: 10px;
+    padding-right: 25px;
+    padding-bottom:10px;
+    padding-left: 25px;
+      border: 0px;
+    font-family:"Acumin Pro Wide";
+      font-size: 18pt;
+      background-color: white;
+      color: #1E2337;
+      border-radius: 25px;
+   text-align: center;
+      
+    
+    
+  }
+  
+  
+  
+  
+  .bottone3{
+      margin: 15px 20px;
+      padding: 20px;
+      border: 0px;
+      font-family:"Acumin Pro Wide";
+      font-size: 18pt;
+      background-color: #FC7C1C;
+      color: white;
+      border-radius: 15px 15px 15px 15px;
+  }
+  
+  
+  
+  
+  
+  
+  .bottone4{
+    margin: 15px 20px;
+       padding-top: 20px;
+    padding-right: 25px;
+    padding-bottom:20px;
+    padding-left: 25px;
+      border: 0px;
+    font-family:"Acumin Pro Wide";
+      font-size: 15pt;
+      background-color: white;
+      color: #FC7C1C;
+      border-radius: 15px;
+   text-align: center;
+      
+    
+    
+  }
