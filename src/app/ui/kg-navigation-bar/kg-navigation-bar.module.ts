@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { KgButtonNavModule } from '../kg-button-nav/kg-button-nav.module';
-import { KgUlLiComponent } from './kg-ul-li.component';
+import { KgNavigationBarComponent } from './kg-navigation-bar.component';
 @NgModule({
   imports: [CommonModule, KgButtonNavModule],
-  exports: [KgUlLiComponent],
-  declarations: [KgUlLiComponent],
+  exports: [KgNavigationBarComponent],
+  declarations: [KgNavigationBarComponent],
 })
-export class KgUlLiModule {}
+export class KgNavigationBarModule {}
