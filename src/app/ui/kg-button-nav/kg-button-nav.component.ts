@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { KgNavigationBarEle } from '../kg-navigation-bar/kg-navigation-bar.types';
 
 @Component({
   selector: 'kg-button-nav',
@@ -6,6 +7,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./kg-button-nav.component.css'],
 })
 export class KgButtonNavComponent {
-  @Input() title: string = '';
-  @Output() onClick = new EventEmitter<void>();
+  @Input() kgNavigationBarEle: KgNavigationBarEle = {
+    navBarId: 0,
+    navBarDesc: '',
+    navBarLink: '',
+    navBarClass: '',
+  };
+  @Output() onKgButNavClick = new EventEmitter<KgNavigationBarEle>();
 }

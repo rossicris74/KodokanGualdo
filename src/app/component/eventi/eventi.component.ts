@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as KgNavigationBarType from '../../api/src/lib/navigation-bar/navigation-bar.type';
 import { NavigationBarService } from '../../api/src/lib/navigation-bar/public-api';
 @Component({
@@ -11,7 +12,10 @@ export class EventiComponent implements OnInit {
   calendMese: CalendMese = [];
   kgNavigationBar: KgNavigationBarType.NavigationBar = [];
 
-  constructor(private readonly navigationBarService: NavigationBarService) {
+  constructor(
+    private readonly router: Router,
+    private readonly navigationBarService: NavigationBarService
+  ) {
     this.calendMese = this.calendarioMeseShow();
   }
 
@@ -145,6 +149,9 @@ export class EventiComponent implements OnInit {
     this.navigationBarService
       .getNavigationBarLocal()
       .subscribe((navigationBar) => (this.kgNavigationBar = navigationBar));
+  }
+  onKgNavBarClick(kgNavigationBarEle: KgNavigationBarType.NavigationBarEle) {
+    this.router.navigate([kgNavigationBarEle.navBarLink]);
   }
 }
 

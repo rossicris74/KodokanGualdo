@@ -22,6 +22,7 @@ export class NavigationBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Navigazione da api BE
     // this.navigationBarHttpService
     //   .getNavigationBar()
     //   .subscribe((navigationBar) => {
@@ -34,6 +35,8 @@ export class NavigationBarComponent implements OnInit {
         console.log('Lettura con service api da Mocks:' + navigationBar.length);
         this.navigationBar = navigationBar;
       });
+
+    // Navigazione da api JsonDb
     // this.navigationBarService
     //   .getNavigationBarJsonDb()
     //   .subscribe((navigationBar) => {

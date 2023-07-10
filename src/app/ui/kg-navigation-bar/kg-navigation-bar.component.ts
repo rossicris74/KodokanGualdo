@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import * as KgNavigationBarType from '../../api/src/lib/navigation-bar/navigation-bar.type';
 
 @Component({
@@ -8,4 +8,10 @@ import * as KgNavigationBarType from '../../api/src/lib/navigation-bar/navigatio
 })
 export class KgNavigationBarComponent {
   @Input() kgNavigationBar: KgNavigationBarType.NavigationBar = [];
+  @Output() kgNavigationEle =
+    new EventEmitter<KgNavigationBarType.NavigationBarEle>();
+
+  onKgNavBarClick(kgNavBarEle: KgNavigationBarType.NavigationBarEle) {
+    this.kgNavigationEle.emit(kgNavBarEle);
+  }
 }

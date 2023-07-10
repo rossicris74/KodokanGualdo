@@ -1,3 +1,6 @@
-<button class="kg-button-nav" (click)="onClick.emit()">
-  {{ title }}
+<button
+  class="kg-button-nav"
+  (click)="onKgButNavClick.emit(kgNavigationBarEle)"
+>
+  {{ kgNavigationBarEle.navBarDesc }}
 </button>
