@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { EventiGare } from '../../lib/event-gare/eventi-gare.type';
+import { EventiGareService } from './../../lib/event-gare/eventi-gare.service';
 import * as CalendarType from './calendar.type';
 
 @Injectable({
@@ -7,11 +9,16 @@ import * as CalendarType from './calendar.type';
 })
 export class KgCalendarSandbox {
   data: Date = new Date();
-
+  dataCorrente: Date = new Date();
+  dataCorrenteNum: number = this.getGiornoDataNum(this.dataCorrente);
+  eventiGare: EventiGare = [];
   calendMese$ = new BehaviorSubject<CalendarType.CalendMese>([]);
 
-  constructor() {
-    this.calendMese$.next(this.calendarioMeseShow());
+  constructor(private readonly eventiGareService: EventiGareService) {
+    this.eventiGareService.getEventiGareLocal().subscribe((eventiGare) => {
+      this.eventiGare = eventiGare;
+      this.calendMese$.next(this.calendarioMeseShow());
+    });
   }
 
   fineMese(mese: number): number {
@@ -120,12 +127,40 @@ export class KgCalendarSandbox {
         calendSettimana = [];
         if (this.primoGiornoMese(this.data) !== 1) {
           for (let u = 1; u < this.primoGiornoMese(this.data); u++) {
-            calendGiorno = { giorno: 0, evento: 0 };
+            calendGiorno = {
+              giorno: 0,
+              giornoDataDate: null,
+              giornoDataNum: 0,
+              evento: 0,
+            };
             calendSettimana.push(calendGiorno);
           }
         }
       }
-      calendGiorno = { giorno: i, evento: 0 };
+      calendGiorno = {
+        giorno: i,
+        giornoDataDate: this.getDateFromParam(
+          this.data.getFullYear(),
+          this.meseNum(this.data),
+          i
+        ),
+        giornoDataNum: this.getGiornoDataNum(
+          this.getDateFromParam(
+            this.data.getFullYear(),
+            this.meseNum(this.data),
+            i
+          )
+        ),
+        evento: this.getEventoGara(
+          this.getGiornoDataNum(
+            this.getDateFromParam(
+              this.data.getFullYear(),
+              this.meseNum(this.data),
+              i
+            )
+          )
+        ),
+      };
       calendSettimana.push(calendGiorno);
 
       if (calendSettimana.length === 7) {
@@ -137,12 +172,48 @@ export class KgCalendarSandbox {
         calendSettimana.length !== 7
       ) {
         for (let u = calendSettimana.length; u < 7; u++) {
-          calendGiorno = { giorno: 0, evento: 0 };
+          calendGiorno = {
+            giorno: 0,
+            giornoDataDate: null,
+            giornoDataNum: 0,
+            evento: 0,
+          };
           calendSettimana.push(calendGiorno);
         }
         calendMese.push(calendSettimana);
       }
     }
     return calendMese;
+  }
+
+  getGiornoDataNum(data: Date): number {
+    return parseInt(
+      data.getFullYear().toString() +
+        this.meseNum(this.data).toString().padStart(2, '0') +
+        data.getDate().toString().padStart(2, '0')
+    );
+  }
+
+  getDateFromParam(anno: number, mese: number, giorno: number) {
+    const data: Date = new Date(
+      anno.toString() +
+        '-' +
+        mese.toString().padStart(2, '0') +
+        '-' +
+        giorno.toString().padStart(2, '0') +
+        'T01:01:00.000Z'
+    );
+    return data;
+  }
+
+  getEventoGara(giornoDataNum: number): number {
+    const idx = this.eventiGare.findIndex(
+      (ele) => ele.eventiGareDataNum === giornoDataNum
+    );
+    return idx === -1
+      ? 0
+      : this.eventiGare[idx].eventiGareDataNum < this.dataCorrenteNum
+      ? 1
+      : 2;
   }
 }

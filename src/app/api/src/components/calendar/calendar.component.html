@@ -3,15 +3,15 @@
     calendMese: calendarSandBox.calendMese$ | async
   } as pipeData"
 >
-  <table class="kg-calendar-td-giorno">
-    <tr>
+  <table class="kg-calendar">
+    <tr style="vertical-align: top">
       <td>
         <div (click)="doPrec()">
           <p class="kg-calendar-arrow"><</p>
         </div>
       </td>
       <td colspan="5">
-        <p class="kg-calendar-anno-mese">
+        <p>
           {{ calendarSandBox.meseCorrenteNome }}
           {{ calendarSandBox.annoCorrente }}
         </p>
@@ -21,7 +21,7 @@
       </td>
     </tr>
 
-    <tr>
+    <!-- <tr>
       <td>lu</td>
       <td>ma</td>
       <td>me</td>
@@ -29,10 +29,19 @@
       <td>ve</td>
       <td>sa</td>
       <td>do</td>
-    </tr>
+    </tr> -->
     <tr *ngFor="let calendSett of pipeData.calendMese">
-      <td *ngFor="let caledGG of calendSett">
-        {{ caledGG.giorno !== 0 ? caledGG.giorno : "" }}
+      <td
+        *ngFor="let calendGG of calendSett"
+        [ngClass]="
+          calendGG.evento === 0
+            ? 'classea'
+            : calendGG.evento === 1
+            ? 'classeb'
+            : 'classec'
+        "
+      >
+        {{ calendGG.giorno !== 0 ? calendGG.giorno : "" }}
       </td>
     </tr>
   </table>

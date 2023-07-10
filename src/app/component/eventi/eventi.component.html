@@ -1,10 +1,4 @@
-<div
-  style="
-    background-image: url('/assets/images/kodokanGualdoSfondo.jpg');
-    width: 100%;
-    height: 1024px;
-  "
->
+<!-- <div style="background-image: url('/assets/images/SfondoEventi.jpg')">
   <div>
     <button
       style="
@@ -21,4 +15,38 @@
   <div style="margin-left: 150px; margin-top: 150px">
     <kg-calendar></kg-calendar>
   </div>
-</div>
+</div> -->
+
+<table
+  style="
+    width: 100%;
+    height: 1024px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-image: url('/assets/images/sfondo-eventi.jpg');
+  "
+>
+  <tr class="eventi-testata">
+    <td class="eventi-marchio">
+      <img class="immagine" src="/assets/images/marchio.jpg" />
+    </td>
+    <td class="eventi-navbar">
+      <kg-navigation-bar
+        [kgNavigationBar]="kgNavigationBar"
+      ></kg-navigation-bar>
+    </td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td style="width: 30%"></td>
+    <td style="width: 40%">
+      <kg-calendar></kg-calendar>
+    </td>
+    <td style="width: 30%"></td>
+  </tr>
+  <tr>
+    <td>Footer</td>
+  </tr>
+</table>

@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import * as KgNavigationBarType from '../../api/src/lib/navigation-bar/navigation-bar.type';
+import { NavigationBarService } from '../../api/src/lib/navigation-bar/public-api';
 @Component({
   selector: 'eventi',
   templateUrl: './eventi.component.html',
   styleUrls: ['./eventi.component.css'],
 })
-export class EventiComponent {
+export class EventiComponent implements OnInit {
   data: Date = new Date();
   calendMese: CalendMese = [];
+  kgNavigationBar: KgNavigationBarType.NavigationBar = [];
 
-  constructor() {
+  constructor(private readonly navigationBarService: NavigationBarService) {
     this.calendMese = this.calendarioMeseShow();
   }
 
@@ -133,6 +135,16 @@ export class EventiComponent {
   doSucc() {
     this.addMese(+1);
     this.calendMese = this.calendarioMeseShow();
+  }
+
+  ngOnInit(): void {
+    this.onInitKgNavigationBar();
+  }
+
+  onInitKgNavigationBar() {
+    this.navigationBarService
+      .getNavigationBarLocal()
+      .subscribe((navigationBar) => (this.kgNavigationBar = navigationBar));
   }
 }
 

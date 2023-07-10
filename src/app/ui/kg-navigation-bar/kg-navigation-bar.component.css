@@ -1,14 +1,14 @@
 .tabella {
-  background-color: blue;
+  font-family: LeagueSpartanMedium;
+  font-size: 18pt;
 }
 
 .tabella button {
   margin: 15px 25px;
   padding: 10px;
   border: 0px;
-  font-family: sans-serif;
-  font-size: 16pt;
-  font-weight: bold;
+  font-family: LeagueSpartanMedium;
+  font-size: 18pt;
   color: orange;
   background-color: transparent;
   border-radius: 10px;

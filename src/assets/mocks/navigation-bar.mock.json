@@ -6,6 +6,12 @@
     "navBarClass": ""
   },
   {
+    "navBarId": 3,
+    "navBarDesc": "Info corsi",
+    "navBarLink": "/info-corsi",
+    "navBarClass": "navigationBarGree"
+  },
+  {
     "navBarId": 2,
     "navBarDesc": "Eventi",
     "navBarLink": "/eventi",

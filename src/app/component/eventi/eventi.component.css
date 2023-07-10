@@ -1,25 +1,18 @@
-.eventi-td-giorno {
-  border-spacing: 0 px;
-  /* background-color: blue; */
-}
-.eventi-td-giorno td {
-  width: 50px;
-  height: 50px;
-  border-color: black;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 0;
-  margin: 0;
-  font-size: 16;
-  text-align: center;
-  border-spacing: 0px;
-  color: white;
-  font-weight: bold;
+.eventi-testata {
+  vertical-align: top;
+  height: 10%;
 }
 
-.kg-eventi-arrow {
-  cursor: pointer;
-  font-size: 36px;
-  font-weight: bold;
-  font-style: normal;
-  color: orangered;
+.eventi-marchio {
+  width: 30%;
+  vertical-align: top;
+}
+.eventi-navbar {
+  vertical-align: middle;
+  width: 70%;
+}
+
+.eventi-immagine {
+  align-items: center;
+  padding: 15px;
 }
