@@ -3,21 +3,30 @@
     calendMese: calendarSandBox.calendMese$ | async
   } as pipeData"
 >
-  <table class="kg-calendar">
-    <tr style="vertical-align: top">
+  <table>
+    <tr>
       <td>
-        <div (click)="doPrec()">
-          <p class="kg-calendar-arrow"><</p>
-        </div>
-      </td>
-      <td colspan="5">
-        <p>
-          {{ calendarSandBox.meseCorrenteNome }}
-          {{ calendarSandBox.annoCorrente }}
-        </p>
-      </td>
-      <td>
-        <div (click)="doSucc()"><p class="kg-calendar-arrow">></p></div>
+        <table>
+          <tr style="vertical-align: top">
+            <td style="width: 15%">
+              <div (click)="doPrec()">
+                <p class="kg-calendar-arrow"><</p>
+              </div>
+            </td>
+            <td style="width: 60%; text-align: center">
+              <p class="kg-calendar-anno-mese">
+                {{ calendarSandBox.meseCorrenteNome }}
+                {{ calendarSandBox.annoCorrente }}
+              </p>
+            </td>
+            <td style="width: 15%">
+              <div (click)="doSucc()">
+                <p style="text-align: right" class="kg-calendar-arrow">></p>
+              </div>
+            </td>
+            <td style="width: 10%"></td>
+          </tr>
+        </table>
       </td>
     </tr>
 
@@ -30,18 +39,24 @@
       <td>sa</td>
       <td>do</td>
     </tr> -->
-    <tr *ngFor="let calendSett of pipeData.calendMese">
-      <td
-        *ngFor="let calendGG of calendSett"
-        [ngClass]="
-          calendGG.evento === 0
-            ? 'classea'
-            : calendGG.evento === 1
-            ? 'classeb'
-            : 'classec'
-        "
-      >
-        {{ calendGG.giorno !== 0 ? calendGG.giorno : "" }}
+    <tr>
+      <td>
+        <table class="kg-calendar-giorni">
+          <tr *ngFor="let calendSett of pipeData.calendMese">
+            <td
+              *ngFor="let calendGG of calendSett"
+              [ngClass]="
+                calendGG.evento === 0
+                  ? 'classea'
+                  : calendGG.evento === 1
+                  ? 'classeb'
+                  : 'classec'
+              "
+            >
+              {{ calendGG.giorno !== 0 ? calendGG.giorno : "" }}
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>
   </table>
