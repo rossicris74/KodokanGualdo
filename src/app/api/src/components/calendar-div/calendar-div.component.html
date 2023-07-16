@@ -1,22 +1,23 @@
 <ng-container
   *ngIf="{
-    calendMese: calendarSandBox.calendMese$ | async
+    calendMese: calendarDivSandBox.calendMese$ | async
   } as pipeData"
 >
   <table>
     <tr>
       <td>
-        <table style="padding-left: 17%">
+        <table>
           <tr style="vertical-align: top">
-            <td style="width: 15%">
+            <td style="width: 10%">ciao</td>
+            <td style="width: 5%">
               <div (click)="doPrec()">
                 <p class="kg-calendar-arrow"><</p>
               </div>
             </td>
             <td style="width: 60%; text-align: center">
               <p class="kg-calendar-anno-mese">
-                {{ calendarSandBox.meseCorrenteNome }}
-                {{ calendarSandBox.annoCorrente }}
+                {{ calendarDivSandBox.meseCorrenteNome }} -
+                {{ calendarDivSandBox.annoCorrente }}
               </p>
             </td>
             <td style="width: 15%">

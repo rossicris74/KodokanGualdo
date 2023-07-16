@@ -1,0 +1,14 @@
+.eventi-div {
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-image: url("/assets/images/sfondo-eventi.jpg");
+}
+
+.eventi-div-immagine {
+  align-items: center;
+}

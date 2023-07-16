@@ -22,5 +22,11 @@
     "navBarDesc": "Preview",
     "navBarLink": "/preview",
     "navBarClass": "navigationBarGree"
+  },
+  {
+    "navBarId": 4,
+    "navBarDesc": "EventiDiv",
+    "navBarLink": "/eventi-div",
+    "navBarClass": "navigationBarGree"
   }
 ]
