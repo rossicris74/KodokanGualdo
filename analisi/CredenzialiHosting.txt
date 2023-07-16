@@ -1,0 +1,7 @@
+
+1) anteprima dominio: http://cristianweb.hostinggratis.it/
+2) indirizzo IP: 185.31.67.125
+3) dominio richiesto: www.cristianweb.it
+4) pannello di controllo: https://server125.hostingvirtuale.com:8282
+5) username: cristianweb
+6) password: b550ea3a
